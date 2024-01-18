@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FreeCoach</string>
+
+    <!-- Home page-->
+
+    <string name="home_yearsSeason">2023-2024</string>
+    <string name="home_group">Groupe</string>
+    <string name="home_nb_players">Nombre de joueurs licenciés:</string>
+    <string name="home_nb_teams">Nombre d\'équipes:</string>
+
+    <!-- Edit Home Page-->
+    <string name="edition_page_d_accueil">Edition page d\'Accueil</string>
+    <string name="input_team_name">Nom de l\'équipe</string>
+    <string name="input_team_group">Equipe à ajouter</string>
+
+
+</resources>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:layout_centerHorizontal="true"
+    android:background="@color/blue"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/HomeTeamName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" MAGNY-VERNOIS "
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        style="@style/DefaultTitleTextStyleBold"
+        android:backgroundTint="@color/red"
+        android:background="@drawable/red_border"/>
+    <TextView
+        android:id="@+id/homeYearsSeason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_yearsSeason"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/HomeTeamName"
+        android:layout_marginTop="20dp"
+        style="@style/DefaultStyleBold"
+        android:textSize="24dp"/>
+
+    <TextView
+        android:id="@+id/homeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_group"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/homeYearsSeason"
+        android:layout_marginTop="20dp"
+        style="@style/DefaultStyleBold"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/homeGroupLetter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="F"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/homeYearsSeason"
+        android:layout_toRightOf="@id/homeGroup"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        style="@style/DefaultStyleBold"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/homeNbPlayersLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_nb_players"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/homeGroup"
+        android:layout_marginTop="20dp"
+        style="@style/DefaultStyleBold"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/homeNbPlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/homeGroup"
+        android:layout_toRightOf="@id/homeNbPlayersLabel"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        style="@style/DefaultStyleBold"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/homeNbTeamsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_nb_teams"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/homeNbPlayersLabel"
+        android:layout_marginTop="20dp"
+        style="@style/DefaultStyleBold"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/homeNbTeams"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/homeNbPlayersLabel"
+        android:layout_toRightOf="@id/homeNbTeamsLabel"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        style="@style/DefaultStyleBold"
+        android:textSize="18dp"/>
+
+    <ListView
+        android:id="@+id/homeListTeams"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/homeEditButton"
+        android:layout_below="@id/homeNbTeamsLabel"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/blue_border"
+        android:backgroundTint="@color/white"
+        android:divider="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/homeEditButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/edit_button"
+        app:tint="@color/white"
+        android:backgroundTint="@color/red"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FreeCoach" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.FreeCoach" parent="Base.Theme.FreeCoach" />
+
+    <style name="DefaultStyleBold">
+        <item name="android:fontFamily">@font/comic_neue</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DefaultTitleTextStyleBold">
+        <item name="android:fontFamily">@font/comic_neue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">36dp</item>
+    </style>
+
+    <style name="DefaultSubTitleTextStyleBold">
+        <item name="android:fontFamily">@font/comic_neue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="DefaultTextStyleBold">
+        <item name="android:fontFamily">@font/comic_neue</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+
+</resources>

@@ -114,7 +114,8 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/blue_border"
         android:backgroundTint="@color/white"
-        android:divider="@color/white" />
+        android:divider="@color/white"
+        tools:listitem="@layout/team_item_list"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/homeEditButton"

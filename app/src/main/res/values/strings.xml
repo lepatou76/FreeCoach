@@ -11,7 +11,13 @@
     <!-- Edit Home Page-->
     <string name="edition_page_d_accueil">Edition page d\'Accueil</string>
     <string name="input_team_name">Nom de l\'équipe</string>
+    <string name="edityearsseason">20--/20--</string>
+    <string name="edit_nb_de_joueurs">Nb de joueurs</string>
+    <string name="edit_groupe">-Groupe-</string>
+    <string name="edit_nb_equipes">Nb d\'équipes</string>
     <string name="input_team_group">Equipe à ajouter</string>
+    <string name="edit_valid_button">VALIDER</string>
+    <string name="edit_clear_list_button">Vider Liste</string>
 
 
 </resources>

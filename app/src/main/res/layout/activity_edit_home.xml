@@ -25,7 +25,7 @@
     <EditText
         android:id="@+id/inputTeamName"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/editPageTitle"
         android:layout_marginTop="20dp"
         android:hint="@string/input_team_name"
@@ -37,52 +37,65 @@
     <EditText
         android:id="@+id/inputSeason"
         android:layout_width="200dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/inputTeamName"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:hint="20--/20--"
+        android:hint="@string/edityearsseason"
         android:textAlignment="center"
         android:background="@drawable/blue_border"
         android:inputType="text"/>
 
     <EditText
         android:id="@+id/inputNbPlayers"
-        android:hint="Nombre de joueurs"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/inputSeason"
-        android:layout_marginTop="20dp"
-        android:textAlignment="center"
+        android:layout_marginTop="12dp"
         android:background="@drawable/blue_border"
-        android:inputType="number"/>
+        android:hint="@string/edit_nb_de_joueurs"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/inputGroupLetter"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/inputSeason"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/blue_border"
+        android:hint="@string/edit_groupe"
+        android:inputType="text"
+        android:textAlignment="center"/>
 
     <EditText
         android:id="@+id/inputNbTeams"
-        android:hint="Nombre d'équipes"
+        android:hint="@string/edit_nb_equipes"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/inputSeason"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:layout_alignParentEnd="true"
         android:layout_marginLeft="20dp"
         android:textAlignment="center"
         android:background="@drawable/blue_border"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:imeOptions="actionDone"/>
 
     <EditText
         android:id="@+id/inputGroupTeams"
         android:layout_width="300dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/inputNbPlayers"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="10dp"
-        android:hint="@string/input_team_group"
-        android:textAlignment="center"
+        android:layout_marginTop="15dp"
         android:background="@drawable/blue_border"
+        android:hint="@string/input_team_group"
+        android:imeOptions="actionDone"
         android:inputType="text"
-        android:imeOptions="actionDone"/>
+        android:textAlignment="center" />
 
     <ListView
         android:id="@+id/editListTeams"
@@ -90,22 +103,29 @@
         android:layout_height="match_parent"
         android:layout_below="@id/inputGroupTeams"
         android:layout_above="@id/editHomeValidButton"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/blue_border"
-        android:divider="@color/white"/>
+        android:divider="@color/white"
+        tools:listitem="@layout/team_item_list"/>
 
     <Button
         android:id="@+id/editHomeValidButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VALIDER"
+        android:text="@string/edit_valid_button"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:backgroundTint="@color/blue"/>
 
-
-
+    <Button
+        android:id="@+id/clearListButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_clear_list_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:backgroundTint="@color/blue"/>
 
 
 </RelativeLayout>

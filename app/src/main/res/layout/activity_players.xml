@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayersActivity"
+    android:background="@color/blue"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/players_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" JOUEURS "
+        android:textColor="@color/white"
+        style="@style/DefaultTitleTextStyleBold"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/red_border"
+        android:backgroundTint="@color/red" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/playersRecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/players_title"
+        android:layout_above="@id/add_new_player"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/blue_border"
+        android:backgroundTint="@color/white"
+        tools:listitem="@layout/player_item"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_new_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/add_player_button"
+        android:backgroundTint="@color/red"
+        app:tint="@color/white"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/home_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/home_button"
+        android:backgroundTint="@color/red"
+        app:tint="@color/white"/>
+
+</RelativeLayout>

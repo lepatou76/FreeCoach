@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@drawable/red_border">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/player_lastname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NOM"
+                style="@style/DefaultTextStyleBold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/player_first_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prénom"
+                style="@style/DefaultTextStyleBold"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@id/player_lastname"
+                android:paddingLeft="20dp"/>
+
+            <ImageView
+                android:id="@+id/deleteButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="36dp"
+                android:src="@drawable/delete_button"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:id="@+id/detailsButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/to_see_details"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/best_score_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Record Jongles:"/>
+
+            <TextView
+                android:id="@+id/best_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                style="@style/DefaultTextStyleBold"
+                android:layout_toRightOf="@id/best_score_label"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/playtime_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temps de jeu:"
+                android:layout_toRightOf="@id/best_score"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/playtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                style="@style/DefaultTextStyleBold"
+                android:layout_toRightOf="@id/playtime_label"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mn"
+                android:layout_toRightOf="@id/playtime"
+                android:paddingLeft="5dp"/>
+
+            <ImageView
+                android:id="@+id/editButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/edit_button"
+                android:layout_centerVertical="true"/>
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

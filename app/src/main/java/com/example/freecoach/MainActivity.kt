@@ -2,12 +2,12 @@ package com.example.freecoach
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import com.example.freecoach.R.layout.team_item_list
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.freecoach.databinding.ActivityMainBinding
+import com.example.freecoach.databinding.ActivityPlayersBinding
 import com.example.freecoach.tools.Serializer
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         // Récupération et affichage des infos de la saison sauvegardées si non nulles
         if(Serializer.deSerialize(fileNameSeason, this) != null) {
@@ -54,6 +55,11 @@ class MainActivity : AppCompatActivity() {
         // Click ouvre le page d'édition de l'accueil
         binding.homeEditButton.setOnClickListener {
             val intent = Intent(this, EditHomeActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.playerScreenButton.setOnClickListener {
+            val intent = Intent(this, PlayersActivity::class.java)
             startActivity(intent)
         }
     }

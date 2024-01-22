@@ -13,7 +13,7 @@
         android:id="@+id/HomeTeamName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" MAGNY-VERNOIS "
+        android:text="@string/home_team_name"
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         style="@style/DefaultTitleTextStyleBold"
@@ -26,7 +26,7 @@
         android:text="@string/home_yearsSeason"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/HomeTeamName"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         style="@style/DefaultStyleBold"
         android:textSize="24dp"/>
 
@@ -38,7 +38,7 @@
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/homeYearsSeason"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         style="@style/DefaultStyleBold"
         android:textSize="18dp"/>
 
@@ -51,7 +51,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/homeYearsSeason"
         android:layout_toRightOf="@id/homeGroup"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
         style="@style/DefaultStyleBold"
         android:textSize="18dp"/>
@@ -63,7 +63,7 @@
         android:text="@string/home_nb_players"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/homeGroup"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         style="@style/DefaultStyleBold"
         android:textSize="18dp"/>
 
@@ -75,7 +75,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/homeGroup"
         android:layout_toRightOf="@id/homeNbPlayersLabel"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         style="@style/DefaultStyleBold"
         android:textSize="18dp"/>
@@ -87,7 +87,7 @@
         android:text="@string/home_nb_teams"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/homeNbPlayersLabel"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         style="@style/DefaultStyleBold"
         android:textSize="18dp"/>
 
@@ -99,7 +99,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/homeNbPlayersLabel"
         android:layout_toRightOf="@id/homeNbTeamsLabel"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         style="@style/DefaultStyleBold"
         android:textSize="18dp"/>
@@ -110,12 +110,13 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/homeEditButton"
         android:layout_below="@id/homeNbTeamsLabel"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/blue_border"
         android:backgroundTint="@color/white"
         android:divider="@color/white"
         tools:listitem="@layout/team_item_list"/>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/homeEditButton"
@@ -127,5 +128,15 @@
         app:tint="@color/white"
         android:backgroundTint="@color/red"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/playerScreenButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/homeEditButton"
+        android:layout_marginRight="100dp"
+        android:src="@drawable/players_button"
+        app:tint="@color/white"
+        android:backgroundTint="@color/red"/>
 
 </RelativeLayout>

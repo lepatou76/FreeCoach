@@ -2,7 +2,7 @@
     <string name="app_name">FreeCoach</string>
 
     <!-- Home page-->
-
+    <string name="home_team_name">" "MAGNY-VERNOIS" "</string>
     <string name="home_yearsSeason">2023-2024</string>
     <string name="home_group">Groupe</string>
     <string name="home_nb_players">Nombre de joueurs licenciés:</string>

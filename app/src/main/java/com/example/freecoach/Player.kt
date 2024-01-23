@@ -4,10 +4,10 @@ data class Player(
     val id: Int,
     val lastName: String,
     val firstName: String,
-    val strongFootMax: Int,
-    val weakFootMax: Int,
-    val headMax: Int,
-    val totalJugglesMax: Int,
-    val totalPlaytime: Int,
-    val goalsScored: Int
+    val strongMax: Int = 1,
+    val weakMax: Int = 1,
+    val headMax: Int = 1,
+    val totalMax: Int = 3,
+    val playtime: Int = 0,
+    val scored: Int = 0
 )

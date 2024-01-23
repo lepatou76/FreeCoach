@@ -19,5 +19,10 @@
     <string name="edit_valid_button">VALIDER</string>
     <string name="edit_clear_list_button">Vider Liste</string>
 
+    <!-- Edit Player Page-->
+    <string name="player_last_name">NOM</string>
+    <string name="player_firstName">Prénom</string>
+    <string name="playTime">Temps de jeu:</string>
+
 
 </resources>

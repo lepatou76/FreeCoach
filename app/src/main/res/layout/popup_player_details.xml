@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/red_border"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/popup_player_title"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/infos_player_title"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        style="@style/DefaultTitleTextStyleBold"
+        android:background="@drawable/red_border"
+        android:backgroundTint="@color/red"/>
+
+    <ImageView
+        android:id="@+id/popup_close_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/close_button"
+        android:layout_alignParentRight="true"/>
+
+    <LinearLayout
+        android:id="@+id/popup_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/popup_player_title"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/popup_lastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/player_last_name"
+            style="@style/DefaultSubTitleTextStyleBold"
+            android:textSize="32dp"/>
+
+        <TextView
+            android:id="@+id/popup_firstName"
+            style="@style/DefaultSubTitleTextStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/player_firstName"
+            android:textSize="32dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/popup_strong"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/popup_name"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/popup_strong"
+            android:layout_marginLeft="20dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+        <TextView
+            android:id="@+id/popup_max_strong"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textAlignment="textEnd"
+            android:layout_marginLeft="10dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+
+        <ImageView
+            android:id="@+id/popup_image_strong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/equal_than_last" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/popup_weak"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/popup_strong"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/popup_weak"
+            android:layout_marginLeft="20dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+        <TextView
+            android:id="@+id/popup_max_weak"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textAlignment="textEnd"
+            android:layout_marginLeft="10dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+        <ImageView
+            android:id="@+id/popup_image_weak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/equal_than_last"
+            android:layout_marginLeft="50dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/popup_head"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/popup_weak"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/popup_head"
+            android:layout_marginLeft="20dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+
+        <TextView
+            android:id="@+id/popup_max_head"
+            style="@style/DefaultSubTitleTextStyleBold"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="1"
+            android:textAlignment="textEnd"/>
+        <ImageView
+            android:id="@+id/popup_image_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/equal_than_last"
+            android:layout_marginLeft="50dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/popup_total"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/popup_head"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/popup_total"
+            android:layout_marginLeft="20dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+        <TextView
+            android:id="@+id/popup_best_total"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:textAlignment="textEnd"
+            android:layout_marginLeft="10dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+
+        <ImageView
+            android:id="@+id/popup_image_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/equal_than_last" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/popup_matchs"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/popup_total"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/nb_matchs_played"
+            android:layout_marginLeft="10dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+        <TextView
+            android:id="@+id/popup_nbMatchs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginLeft="30dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/popup_total_playtime"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/popup_matchs"
+        android:gravity="center_vertical">
+
+        <TextView
+            style="@style/DefaultSubTitleTextStyleBold"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/popup_playtime" />
+
+        <TextView
+            android:id="@+id/popup_playtime"
+            style="@style/DefaultSubTitleTextStyleBold"
+            android:layout_width="60dp"
+            android:textAlignment="textEnd"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="0" />
+
+        <TextView
+            style="@style/DefaultSubTitleTextStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="mn" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/popup_relative_playtime"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/popup_total_playtime"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="@string/playtime_by_match"
+            android:layout_marginLeft="10dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+        <TextView
+            android:id="@+id/popup_ratio"
+            android:layout_width="50dp"
+            android:textAlignment="textEnd"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginLeft="10dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mn"
+            android:layout_marginLeft="10dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/popup_goals"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/popup_relative_playtime"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/goals_scored"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+
+        <TextView
+            android:id="@+id/popup_nbGoals"
+            style="@style/DefaultSubTitleTextStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="0" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/popup_delete_player_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/delete_button"
+        android:layout_below="@id/popup_goals"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+    <ImageView
+        android:id="@+id/popup_edit_player_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/edit_button"
+        android:layout_below="@id/popup_goals"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"/>
+
+</RelativeLayout>

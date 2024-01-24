@@ -95,6 +95,12 @@ class EditHomeActivity : AppCompatActivity() {
             editTeamsList.clear()
             afficheEquipes()
         }
+
+        // Retourne a l'accueil si on clique
+        binding.editHomeExitButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
         afficheEquipes()
 
         // Vide les champs quand on est dessus

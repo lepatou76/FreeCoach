@@ -21,6 +21,7 @@ class PlayersDataBaseHelper(context: Context): SQLiteOpenHelper
         private const val COLUMN_WEAK = "piedfaible"
         private const val COLUMN_HEAD = "tête"
         private const val COLUMN_TOTAL = "totalJongles"
+        private const val COLUMN_NBMATCHS = "nbMatchs"
         private const val COLUMN_PLAYTIME = "totalTempsJeu"
         private const val COLUMN_SCORED = "butsMarqués"
     }
@@ -32,6 +33,7 @@ class PlayersDataBaseHelper(context: Context): SQLiteOpenHelper
                 " $COLUMN_WEAK INTEGER," +
                 " $COLUMN_HEAD INTEGER," +
                 " $COLUMN_TOTAL INTEGER," +
+                " $COLUMN_NBMATCHS INTEGER," +
                 " $COLUMN_PLAYTIME INTEGER," +
                 " $COLUMN_SCORED INTEGER)"
         db?.execSQL(createTableQuery)
@@ -52,6 +54,7 @@ class PlayersDataBaseHelper(context: Context): SQLiteOpenHelper
             put(COLUMN_WEAK, player.weakMax)
             put(COLUMN_HEAD, player.headMax)
             put(COLUMN_TOTAL, player.totalMax)
+            put(COLUMN_NBMATCHS,player.nbMatchs)
             put(COLUMN_PLAYTIME, player.playtime)
             put(COLUMN_SCORED, player.scored)
         }
@@ -76,14 +79,23 @@ class PlayersDataBaseHelper(context: Context): SQLiteOpenHelper
             val weak = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_WEAK))
             val head = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_HEAD))
             val total = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_TOTAL))
+            val nbMatchs = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_NBMATCHS))
             val playTime = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_PLAYTIME))
             val scored = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_SCORED))
             val player =
-                Player(id, lastName, firstName, strong, weak, head, total, playTime, scored)
+                Player(id, lastName, firstName, strong, weak, head, total, nbMatchs, playTime, scored)
             playerList.add(player)
             }
         cursor.close()
         db.close()
         return playerList
+    }
+
+    fun deletePlayer(playerId: Int) {
+        val db = writableDatabase
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(playerId.toString())
+
+        db.delete(TABLE_NAME, whereClause, whereArgs)
     }
 }

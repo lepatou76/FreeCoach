@@ -13,7 +13,7 @@
         android:id="@+id/editPageTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/edition_page_d_accueil"
+        android:text="@string/edit_home_page"
         style="@style/DefaultTitleTextStyleBold"
         android:background="@drawable/blue_border"
         android:backgroundTint="@color/blue"
@@ -41,7 +41,7 @@
         android:layout_below="@+id/inputTeamName"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:hint="@string/edityearsseason"
+        android:hint="@string/edit_years_season"
         android:textAlignment="center"
         android:background="@drawable/blue_border"
         android:inputType="text"/>
@@ -53,7 +53,7 @@
         android:layout_below="@+id/inputSeason"
         android:layout_marginTop="12dp"
         android:background="@drawable/blue_border"
-        android:hint="@string/edit_nb_de_joueurs"
+        android:hint="@string/edit_nb_players"
         android:inputType="number"
         android:textAlignment="center" />
 
@@ -65,13 +65,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:background="@drawable/blue_border"
-        android:hint="@string/edit_groupe"
+        android:hint="@string/edit_group"
         android:inputType="text"
         android:textAlignment="center"/>
 
     <EditText
         android:id="@+id/inputNbTeams"
-        android:hint="@string/edit_nb_equipes"
+        android:hint="@string/edit_nb_teams"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@+id/inputSeason"
@@ -124,8 +124,22 @@
         android:layout_height="wrap_content"
         android:text="@string/edit_clear_list_button"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/editHomeValidButton"
+        android:layout_marginRight="30dp"
         android:backgroundTint="@color/blue"/>
+
+    <ImageView
+        android:id="@+id/editHomeExitButton"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:src="@drawable/close_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/blue_border"
+        android:backgroundTint="@color/blue"
+        app:tint="@color/white"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"/>
 
 
 </RelativeLayout>

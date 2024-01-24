@@ -8,6 +8,7 @@ data class Player(
     val weakMax: Int = 1,
     val headMax: Int = 1,
     val totalMax: Int = 3,
+    val nbMatchs: Int = 0,
     val playtime: Int = 0,
     val scored: Int = 0
 )

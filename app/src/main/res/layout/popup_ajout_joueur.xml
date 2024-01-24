@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="320dp"
     android:layout_height="210dp"
@@ -10,7 +11,7 @@
         android:id="@+id/popup_AddPlayer_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" Ajout Joueur "
+        android:text="@string/add_player_title"
         android:textColor="@color/white"
         style="@style/DefaultTitleTextStyleBold"
         android:background="@drawable/blue_border"
@@ -45,7 +46,8 @@
         android:layout_below="@id/popup_addPlayer_lastName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:hint="@string/player_firstName"        android:textSize="32dp"
+        android:hint="@string/player_firstName"
+        android:textSize="32dp"
         android:textAlignment="center"
         style="@style/DefaultSubTitleTextStyleBold"
         android:background="@drawable/blue_border"

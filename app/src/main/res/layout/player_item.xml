@@ -51,7 +51,7 @@
                 android:id="@+id/best_score_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Record Jongles:"/>
+                android:text="@string/record_juggles_item"/>
 
             <TextView
                 android:id="@+id/best_score"
@@ -66,7 +66,7 @@
                 android:id="@+id/playtime_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/playTime"
+                android:text="@string/playTime_item"
                 android:layout_marginLeft="30dp"
                 android:layout_toRightOf="@id/best_score"
                 android:paddingLeft="10dp"/>

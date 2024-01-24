@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.freecoach.Player
 import com.example.freecoach.PlayersActivity
+import com.example.freecoach.PopupPlayer
 import com.example.freecoach.R
 
 
@@ -34,11 +35,17 @@ class PlayersAdapter(private var players: List<Player>, val context: PlayersActi
     override fun getItemCount(): Int = players.size
 
     override fun onBindViewHolder(holder: PlayerViewHolder, position: Int) {
-        val player = players[position]
-        holder.lastNameTextView.text = player.lastName
-        holder.firstNameTextView.text = player.firstName
-        holder.bestScoreTextView.text = player.totalMax.toString()
-        holder.totalPlaytimeTextView.text = player.playtime.toString()
+        val currentPlayer = players[position]
+        holder.lastNameTextView.text = currentPlayer.lastName
+        holder.firstNameTextView.text = currentPlayer.firstName
+        holder.bestScoreTextView.text = currentPlayer.totalMax.toString()
+        holder.totalPlaytimeTextView.text = currentPlayer.playtime.toString()
+
+        // interaction click sur un joueur
+        holder.itemView.setOnClickListener {
+            // afficher les détails du joueur
+            PopupPlayer(this, currentPlayer).show()
+        }
 
     }
 

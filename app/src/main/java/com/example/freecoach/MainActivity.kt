@@ -8,6 +8,7 @@ import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.freecoach.databinding.ActivityMainBinding
 import com.example.freecoach.databinding.ActivityPlayersBinding
+import com.example.freecoach.tools.PlayersDataBaseHelper
 import com.example.freecoach.tools.Serializer
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -16,6 +17,7 @@ import com.google.gson.reflect.TypeToken
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var db: PlayersDataBaseHelper
     val fileNameTeams = "groupTeamList"
     val fileNameSeason = "infosSeason"
     var teamsListView: ListView? = null
@@ -29,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        db = PlayersDataBaseHelper(this)
+        var nbPlayers = db.getAllPlayers().size
+        binding.homeNbPlayers.text = nbPlayers.toString()
 
         // Récupération et affichage des infos de la saison sauvegardées si non nulles
         if(Serializer.deSerialize(fileNameSeason, this) != null) {
@@ -38,7 +43,6 @@ class MainActivity : AppCompatActivity() {
         binding.HomeTeamName.setText(" " + infosSeason.teamName + " ")
         binding.homeYearsSeason.setText(infosSeason.yearsSeason)
         binding.homeGroupLetter.setText(infosSeason.groupLetter)
-        binding.homeNbPlayers.setText(infosSeason.nbPlayers.toString())
         binding.homeNbTeams.setText(infosSeason.nbTeams.toString())
 
         // Affichage de la liste des équipes sauvegardées si elle n'est pas nulle

@@ -1,5 +1,6 @@
 package com.example.freecoach
 
+
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
@@ -8,7 +9,7 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
+import com.example.freecoach.R.*
 import com.example.freecoach.tools.PlayersAdapter
 import com.example.freecoach.tools.PlayersDataBaseHelper
 
@@ -18,21 +19,33 @@ class PopupPlayer(
 
     private val db = PlayersDataBaseHelper(adapter.context)
     private var context: Context = adapter.context
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
-        setContentView(R.layout.popup_player_details)
+        setContentView(layout.popup_player_details)
         getWindow()?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)
 
-        findViewById<TextView>(R.id.popup_lastName).text = currentPlayer.lastName
-        findViewById<TextView>(R.id.popup_firstName).text = currentPlayer.firstName
-        //findViewById<TextView>(R.id.popup_firstName).text = currentPlayer.strongMax.toString()
-        //findViewById<TextView>(R.id.popup_firstName).text = currentPlayer.weakMax.toString()
-        //findViewById<TextView>(R.id.popup_firstName).text = currentPlayer.headMax.toString()
-        //findViewById<TextView>(R.id.popup_firstName).text = currentPlayer.totalMax.toString()
-        //findViewById<TextView>(R.id.popup_firstName).text = currentPlayer.nbMatchs.toString()
-        //findViewById<TextView>(R.id.popup_firstName).text = currentPlayer.playtime.toString()
-        //findViewById<TextView>(R.id.popup_firstName).text = currentPlayer.scored.toString()
+        findViewById<TextView>(id.popup_lastName).text = currentPlayer.lastName
+        findViewById<TextView>(id.popup_firstName).text = currentPlayer.firstName
+        findViewById<TextView>(id.popup_max_strong).text = currentPlayer.strongMax.toString()
+        findViewById<ImageView>(id.popup_image_strong).setImageResource(currentPlayer.strongImage)
+        findViewById<TextView>(id.popup_max_weak).text = currentPlayer.weakMax.toString()
+        findViewById<ImageView>(id.popup_image_weak).setImageResource(currentPlayer.weakImage)
+        findViewById<TextView>(id.popup_max_head).text = currentPlayer.headMax.toString()
+        findViewById<ImageView>(id.popup_image_head).setImageResource(currentPlayer.headImage)
+        findViewById<TextView>(id.popup_max_total).text = currentPlayer.totalMax.toString()
+        findViewById<ImageView>(id.popup_image_total).setImageResource(currentPlayer.totalImage)
+        findViewById<TextView>(id.popup_nbMatchs).text = currentPlayer.nbMatchs.toString()
+        findViewById<TextView>(id.popup_playtime).text = currentPlayer.playtime.toString()
+        findViewById<TextView>(id.popup_nbGoals).text = currentPlayer.scored.toString()
+
+        if(currentPlayer.nbMatchs.toString().toInt() != 0) {
+            findViewById<TextView>(id.popup_ratio).text =
+                (currentPlayer.playtime.toString().toInt())
+                    .div(currentPlayer.nbMatchs.toString().toInt()).toString()
+        }
 
         setupCloseButton()
         setupDeletePlayer()
@@ -41,21 +54,23 @@ class PopupPlayer(
 
     // Acceder aux modifications des infos joueur
     private fun setupEditPlayerButton() {
-        findViewById<ImageView>(R.id.popup_edit_player_button).setOnClickListener {
-            val intent = Intent(context, EditPlayerActivity::class.java)
+        findViewById<ImageView>(id.popup_edit_player_button).setOnClickListener {
+
+            val intent = Intent(context, EditPlayerActivity()::class.java)
+            intent.putExtra("player_id", currentPlayer.id)
             context.startActivity(intent)
         }
     }
 
     // Pour fermer la fenêtre
     private fun setupCloseButton() {
-        findViewById<ImageView>(R.id.popup_close_button).setOnClickListener {
+        findViewById<ImageView>(id.popup_close_button).setOnClickListener {
             dismiss()
         }
     }
     // Pour supprimer un joueur
     private fun setupDeletePlayer() {
-        findViewById<ImageView>(R.id.popup_delete_player_button).setOnClickListener {
+        findViewById<ImageView>(id.popup_delete_player_button).setOnClickListener {
             db.deletePlayer(currentPlayer.id)
             val intent = Intent(context, PlayersActivity::class.java)
             context.startActivity(intent)

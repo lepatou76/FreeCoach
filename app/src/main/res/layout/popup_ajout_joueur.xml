@@ -37,7 +37,7 @@
         android:textAlignment="center"
         style="@style/DefaultSubTitleTextStyleBold"
         android:background="@drawable/blue_border"
-        android:inputType="text"/>
+        android:inputType="textCapCharacters"/>
 
     <EditText
         android:id="@+id/popup_addPlayer_firstName"

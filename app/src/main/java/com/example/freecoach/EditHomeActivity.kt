@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.freecoach.databinding.ActivityEditHomeBinding
+import com.example.freecoach.tools.PlayersDataBaseHelper
 import com.example.freecoach.tools.Serializer
 import com.google.android.material.internal.ViewUtils.hideKeyboard
 import com.google.gson.Gson
@@ -18,7 +19,6 @@ import com.google.gson.reflect.TypeToken
 class EditHomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditHomeBinding
-
     val fileNameTeams = "groupTeamList"
     val fileNameSeason = "infosSeason"
     var teamsListView: ListView? = null
@@ -41,7 +41,6 @@ class EditHomeActivity : AppCompatActivity() {
         }
         binding.inputTeamName.setText(infosSeason.teamName)
         binding.inputSeason.setText(infosSeason.yearsSeason)
-        binding.inputNbPlayers.setText(infosSeason.nbPlayers.toString())
         binding.inputGroupLetter.setText(infosSeason.groupLetter)
         binding.inputNbTeams.setText(infosSeason.nbTeams.toString())
 
@@ -60,10 +59,21 @@ class EditHomeActivity : AppCompatActivity() {
                 hideKeyboard(binding.inputGroupTeams)
                 // rafraichisement de la liste des équipes
                 afficheEquipes()
+                // Mise a jour du nombre d'équipe
+                binding.inputNbTeams.setText((editTeamsList.size + 1).toString())
+
 
                 return@setOnEditorActionListener true
             }
             false
+        }
+
+        // supprime une equipe si on clique dessus
+        binding.editListTeams.setOnItemClickListener { parent, view, position, id ->
+            editTeamsList.removeAt(position)
+            // Mise a jour du nombre d'équipe
+            binding.inputNbTeams.setText((editTeamsList.size + 1).toString())
+            afficheEquipes()
         }
 
         // sauvegarde des informations au clic sur VALIDER
@@ -76,11 +86,10 @@ class EditHomeActivity : AppCompatActivity() {
             // Récupération des infos de la saisons puis sauvegarde
             val teamName = binding.inputTeamName.text.toString()
             val yearsSeason = binding.inputSeason.text.toString()
-            val nbPlayers = binding.inputNbPlayers.text.toString().toInt()
             val groupLetter = binding.inputGroupLetter.text.toString()
             val nbTeams = binding.inputNbTeams.text.toString().toInt()
 
-            infosSeason = InfosSeason(teamName, yearsSeason, groupLetter, nbPlayers, nbTeams)
+            infosSeason = InfosSeason(teamName, yearsSeason, groupLetter, nbTeams)
 
             val jsonString2 = Gson().toJson(infosSeason)
             Serializer.serialize(fileNameSeason, jsonString2, this)
@@ -93,6 +102,8 @@ class EditHomeActivity : AppCompatActivity() {
         // Vide la liste des équipes par le clic du bouton Vider Liste
         binding.clearListButton.setOnClickListener {
             editTeamsList.clear()
+            // Mise a jour du nombre d'équipe
+            binding.inputNbTeams.setText(editTeamsList.size.toString())
             afficheEquipes()
         }
 
@@ -112,17 +123,9 @@ class EditHomeActivity : AppCompatActivity() {
             if (hasFocus) {
                 (binding.inputSeason).text.clear()
             }}
-        binding.inputNbPlayers.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
-            if (hasFocus) {
-                (binding.inputNbPlayers).text.clear()
-            }}
         binding.inputGroupLetter.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {
                 (binding.inputGroupLetter).text.clear()
-            }}
-        binding.inputNbTeams.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
-            if (hasFocus) {
-                (binding.inputNbTeams).text.clear()
             }}
     }
 

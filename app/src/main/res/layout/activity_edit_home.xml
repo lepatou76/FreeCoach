@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:padding="10dp"
     android:layout_gravity="center_horizontal"
     tools:context=".EditHomeActivity"
     android:background="@drawable/blue_border">
@@ -32,7 +32,8 @@
         android:textSize="24dp"
         android:textAlignment="center"
         android:background="@drawable/blue_border"
-        android:inputType="text"/>
+        android:inputType="textCapCharacters"
+        android:imeOptions="actionDone"/>
 
     <EditText
         android:id="@+id/inputSeason"
@@ -44,32 +45,23 @@
         android:hint="@string/edit_years_season"
         android:textAlignment="center"
         android:background="@drawable/blue_border"
-        android:inputType="text"/>
-
-    <EditText
-        android:id="@+id/inputNbPlayers"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_below="@+id/inputSeason"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/blue_border"
-        android:hint="@string/edit_nb_players"
-        android:inputType="number"
-        android:textAlignment="center" />
+        android:inputType="date"
+        android:imeOptions="actionDone"/>
 
     <EditText
         android:id="@+id/inputGroupLetter"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@id/inputSeason"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
+        android:layout_marginStart="80dp"
         android:background="@drawable/blue_border"
         android:hint="@string/edit_group"
-        android:inputType="text"
+        android:inputType="textCapCharacters"
+        android:imeOptions="actionDone"
         android:textAlignment="center"/>
 
-    <EditText
+    <TextView
         android:id="@+id/inputNbTeams"
         android:hint="@string/edit_nb_teams"
         android:layout_width="wrap_content"
@@ -77,8 +69,10 @@
         android:layout_below="@+id/inputSeason"
         android:layout_marginTop="12dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="80dp"
         android:textAlignment="center"
+        android:textSize="18dp"
+        android:gravity="center"
         android:background="@drawable/blue_border"
         android:inputType="number"
         android:imeOptions="actionDone"/>
@@ -87,14 +81,14 @@
         android:id="@+id/inputGroupTeams"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/inputNbPlayers"
+        android:layout_below="@+id/inputGroupLetter"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/blue_border"
         android:hint="@string/input_team_group"
         android:imeOptions="actionDone"
-        android:inputType="text"
+        android:inputType="textCapCharacters"
         android:textAlignment="center" />
 
     <ListView

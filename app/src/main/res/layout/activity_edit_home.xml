@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".EditHomeActivity"
     android:padding="10dp"
     android:layout_gravity="center_horizontal"
-    tools:context=".EditHomeActivity"
     android:background="@drawable/blue_border">
     
     <TextView
@@ -19,8 +19,7 @@
         android:backgroundTint="@color/blue"
         android:textColor="@color/white"
         android:textAlignment="center"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_centerHorizontal="true"/>
 
     <EditText
         android:id="@+id/inputTeamName"
@@ -49,12 +48,25 @@
         android:imeOptions="actionDone"/>
 
     <EditText
+        android:id="@+id/inputMatchsDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/inputSeason"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/blue_border"
+        android:hint="Durée en mn"
+        android:textAlignment="center"
+        android:inputType="number"
+        android:imeOptions="actionDone"/>
+
+    <EditText
         android:id="@+id/inputGroupLetter"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_below="@id/inputSeason"
         android:layout_marginTop="12dp"
-        android:layout_marginStart="80dp"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/blue_border"
         android:hint="@string/edit_group"
         android:inputType="textCapCharacters"
@@ -68,8 +80,8 @@
         android:layout_height="40dp"
         android:layout_below="@+id/inputSeason"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="80dp"
         android:textAlignment="center"
         android:textSize="18dp"
         android:gravity="center"
@@ -94,7 +106,7 @@
     <ListView
         android:id="@+id/editListTeams"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="300dp"
         android:layout_below="@id/inputGroupTeams"
         android:layout_above="@id/editHomeValidButton"
         android:layout_marginTop="10dp"
@@ -118,7 +130,7 @@
         android:layout_height="wrap_content"
         android:text="@string/edit_clear_list_button"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/editHomeValidButton"
+        android:layout_centerHorizontal="true"
         android:layout_marginRight="30dp"
         android:backgroundTint="@color/blue"/>
 

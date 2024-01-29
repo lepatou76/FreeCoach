@@ -67,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/playTime_item"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/best_score"
                 android:paddingLeft="10dp"/>
 
@@ -87,10 +87,7 @@
                 android:layout_toRightOf="@id/playtime"
                 android:paddingLeft="5dp"/>
 
-
         </RelativeLayout>
-
-
 
     </LinearLayout>
 

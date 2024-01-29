@@ -1,6 +1,5 @@
 package com.example.freecoach
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.example.freecoach.databinding.ActivityPlayersBinding
@@ -27,15 +26,18 @@ class PlayersActivity: AppCompatActivity() {
         binding.playersRecyclerview.layoutManager = LinearLayoutManager(this)
         binding.playersRecyclerview.adapter = playerAdapter
 
-
         // retour a l'accueil par click bouton Home
-        binding.homeButton.setOnClickListener {
+        binding.playersHomeButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
+        // Click ouvre la page Matchs
+        binding.playersMatchsScreenButton.setOnClickListener {
+            val intent = Intent(this, MatchsActivity::class.java)
+            startActivity(intent)
+        }
         // Ouverture du popup d'ajout de joueur
-        binding.addNewPlayer.setOnClickListener {
+        binding.addNewPlayerButton.setOnClickListener {
             PopupAddPlayer(adapter = PlayersAdapter(db.getAllPlayers(),this)).show()
         }
     }

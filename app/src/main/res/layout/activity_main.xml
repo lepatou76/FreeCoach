@@ -112,7 +112,7 @@
             android:id="@+id/homeNbTeams"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="8"
+            android:text="1"
             android:layout_centerHorizontal="true"
             android:layout_toRightOf="@id/homeNbTeamsLabel"
             android:layout_marginLeft="10dp"
@@ -146,17 +146,17 @@
         android:backgroundTint="@color/red"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/playerScreenButton"
+        android:id="@+id/homePlayerScreenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@id/homeEditButton"
-        android:layout_marginRight="100dp"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/players_button"
         app:tint="@color/white"
         android:backgroundTint="@color/red"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/homeMatchsScreenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

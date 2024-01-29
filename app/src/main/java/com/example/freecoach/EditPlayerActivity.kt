@@ -2,20 +2,29 @@ package com.example.freecoach
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
-import com.example.freecoach.databinding.ActivityEditPlayerBinding
 import android.view.inputmethod.EditorInfo
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.freecoach.databinding.ActivityEditPlayerBinding
 import com.example.freecoach.tools.PlayersDataBaseHelper
+import com.example.freecoach.tools.Serializer
 import com.google.android.material.internal.ViewUtils.hideKeyboard
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+
 
 class EditPlayerActivity() : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditPlayerBinding
     private lateinit var db: PlayersDataBaseHelper
     private var playerID: Int = -1
+    val fileNameSeason = "infosSeason"
+    val seasontype = object : TypeToken<InfosSeason>() {}.type
+    var infosSeason = InfosSeason()
 
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +33,12 @@ class EditPlayerActivity() : AppCompatActivity() {
         setContentView(binding.root)
 
         db = PlayersDataBaseHelper(this)
+
+        // Récupération et affichage des infos de la saison sauvegardées si non nulles
+        if(Serializer.deSerialize(fileNameSeason, this) != null) {
+            val seasonBack = Serializer.deSerialize(fileNameSeason, this).toString()
+            infosSeason = Gson().fromJson(seasonBack, seasontype)
+        }
 
         // récupérer le joueur et ses infos par son ID
         playerID = intent.getIntExtra("player_id", -1)
@@ -62,6 +77,42 @@ class EditPlayerActivity() : AppCompatActivity() {
                 binding.editNewTotal.setText((strong.toInt() + weak.toInt() + head.toInt()).toString())
                 hideKeyboard(binding.editNewTotal)
 
+                return@setOnEditorActionListener true
+            }
+            false
+        }
+
+        // Test si le temps de jeu entré n'est pas supérieur à la durée d'un match
+        // et affichage d'un message d'erreur sinon
+        binding.editAddPlaytime.setOnEditorActionListener { v, actionId, event ->
+            val matchDuration = infosSeason.matchDuration
+            var timeAdded = binding.editAddPlaytime.text.toString()
+            if (timeAdded.isEmpty()) { timeAdded = "0"
+                binding.editAddPlaytime.setText("0")}
+            if (actionId == EditorInfo.IME_ACTION_DONE){
+
+                if(timeAdded.toInt() > matchDuration) {
+                    val error  = Toast.makeText(this, "  LE TEMPS SAISI EST SUPERIEUR" +
+                            "\nAU TEMPS MAXIMUM D\'UN MATCH" ,
+                        Toast.LENGTH_SHORT)
+                    error.setGravity(Gravity.CENTER_HORIZONTAL, 0, 0)
+                    error.show()
+                    binding.editAddPlaytime.text.clear()
+                    hideKeyboard(binding.editAddPlaytime)
+                }
+
+                hideKeyboard(binding.editAddPlaytime)
+                return@setOnEditorActionListener true
+            }
+            false
+        }
+        // Ne pas laisser le champ but à ajouter vide par erreur
+        binding.editAddGoals.setOnEditorActionListener { v, actionId, event ->
+            var goalsToAdd = binding.editAddGoals.text.toString()
+
+            if (actionId == EditorInfo.IME_ACTION_DONE){
+                if(goalsToAdd.isEmpty()) {binding.editAddGoals.setText("0")}
+                hideKeyboard(binding.editAddGoals)
                 return@setOnEditorActionListener true
             }
             false

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/red_border"
-    android:padding="10dp">
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/popup_player_title"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/infos_player_title"
         android:textAlignment="center"
         android:textColor="@color/white"
+        android:layout_marginStart="20dp"
         style="@style/DefaultTitleTextStyleBold"
         android:background="@drawable/red_border"
         android:backgroundTint="@color/red"/>
@@ -47,7 +47,7 @@
             style="@style/DefaultSubTitleTextStyleBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:text="@string/player_firstName"
             android:textSize="32dp" />
 
@@ -55,14 +55,15 @@
 
     <LinearLayout
         android:id="@+id/popup_strong"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@id/popup_name"
         android:layout_marginTop="20dp"
-        android:gravity="center_vertical">
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
 
         <TextView
-            android:layout_width="200dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="@string/popup_strong"
             android:layout_marginLeft="20dp"
@@ -80,8 +81,8 @@
             android:id="@+id/popup_image_strong"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/equal_than_last" />
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/bar_of_six" />
 
     </LinearLayout>
 
@@ -90,10 +91,11 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@id/popup_strong"
-        android:gravity="center_vertical">
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
 
         <TextView
-            android:layout_width="200dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="@string/popup_weak"
             android:layout_marginLeft="20dp"
@@ -110,8 +112,8 @@
             android:id="@+id/popup_image_weak"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/equal_than_last"
-            android:layout_marginLeft="50dp"/>
+            android:src="@drawable/bar_of_six"
+            android:layout_marginLeft="20dp"/>
 
     </LinearLayout>
 
@@ -120,14 +122,16 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@id/popup_weak"
-        android:gravity="center_vertical">
+        android:layout_marginTop="1dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
 
         <TextView
-            android:layout_width="200dp"
+            style="@style/DefaultSubTitleTextStyleBold"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:text="@string/popup_head"
             android:layout_marginLeft="20dp"
-            style="@style/DefaultSubTitleTextStyleBold"/>
+            android:text="@string/popup_head" />
 
         <TextView
             android:id="@+id/popup_max_head"
@@ -136,13 +140,14 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="1"
-            android:textAlignment="textEnd"/>
+            android:textAlignment="textEnd" />
+
         <ImageView
             android:id="@+id/popup_image_head"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/equal_than_last"
-            android:layout_marginLeft="50dp"/>
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/bar_of_six" />
 
     </LinearLayout>
 
@@ -152,10 +157,11 @@
         android:layout_height="40dp"
         android:layout_below="@id/popup_head"
         android:layout_marginTop="20dp"
-        android:gravity="center_vertical">
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
 
         <TextView
-            android:layout_width="200dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="@string/popup_total"
             android:layout_marginLeft="20dp"
@@ -173,8 +179,8 @@
             android:id="@+id/popup_image_total"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/equal_than_last" />
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/bar_of_six" />
 
     </LinearLayout>
 
@@ -183,22 +189,24 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@id/popup_total"
-        android:layout_marginTop="20dp"
-        android:gravity="center_vertical">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:gravity="center">
 
         <TextView
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:text="@string/nb_matchs_played"
-            android:layout_marginLeft="10dp"
-            style="@style/DefaultSubTitleTextStyleBold"/>
-        <TextView
-            android:id="@+id/popup_nbMatchs"
+            style="@style/DefaultSubTitleTextStyleBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:layout_marginLeft="30dp"
-            style="@style/DefaultSubTitleTextStyleBold"/>
+            android:layout_marginLeft="10dp"
+            android:text="@string/nb_matchs_played" />
+
+        <TextView
+            android:id="@+id/popup_nbMatchs"
+            style="@style/DefaultSubTitleTextStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="0" />
 
     </LinearLayout>
 
@@ -207,11 +215,12 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@id/popup_matchs"
-        android:gravity="center_vertical">
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
 
         <TextView
             style="@style/DefaultSubTitleTextStyleBold"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="@string/popup_playtime" />
@@ -219,7 +228,7 @@
         <TextView
             android:id="@+id/popup_playtime"
             style="@style/DefaultSubTitleTextStyleBold"
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:textAlignment="textEnd"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -240,17 +249,18 @@
         android:layout_height="40dp"
         android:layout_below="@id/popup_total_playtime"
         android:layout_marginTop="20dp"
-        android:gravity="center_vertical">
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
 
         <TextView
-            android:layout_width="220dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/playtime_by_match"
             android:layout_marginLeft="10dp"
             style="@style/DefaultSubTitleTextStyleBold"/>
         <TextView
             android:id="@+id/popup_ratio"
-            android:layout_width="50dp"
+            android:layout_width="wrap_content"
             android:textAlignment="textEnd"
             android:layout_height="wrap_content"
             android:text="0"
@@ -272,6 +282,7 @@
         android:layout_height="40dp"
         android:layout_below="@id/popup_relative_playtime"
         android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
         android:gravity="center">
 
         <TextView
@@ -285,7 +296,7 @@
             style="@style/DefaultSubTitleTextStyleBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="20dp"
             android:text="0" />
 
     </LinearLayout>

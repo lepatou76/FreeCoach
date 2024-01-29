@@ -7,7 +7,6 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.freecoach.databinding.ActivityMainBinding
-import com.example.freecoach.databinding.ActivityPlayersBinding
 import com.example.freecoach.tools.PlayersDataBaseHelper
 import com.example.freecoach.tools.Serializer
 import com.google.gson.Gson
@@ -61,9 +60,14 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, EditHomeActivity::class.java)
             startActivity(intent)
         }
-
-        binding.playerScreenButton.setOnClickListener {
+        // Click ouvre la page Joueurs
+        binding.homePlayerScreenButton.setOnClickListener {
             val intent = Intent(this, PlayersActivity::class.java)
+            startActivity(intent)
+        }
+        // Click ouvre la page Matchs
+        binding.homeMatchsScreenButton.setOnClickListener {
+            val intent = Intent(this, MatchsActivity::class.java)
             startActivity(intent)
         }
     }

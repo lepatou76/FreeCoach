@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FreeCoach"
         tools:targetApi="31">
         <activity
+            android:name=".MatchsActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditPlayerActivity"
             android:exported="false" />
         <activity
@@ -20,7 +23,8 @@
             android:exported="false" />
         <activity
             android:name=".EditHomeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

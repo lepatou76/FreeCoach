@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.freecoach.databinding.ActivityEditHomeBinding
-import com.example.freecoach.tools.PlayersDataBaseHelper
 import com.example.freecoach.tools.Serializer
 import com.google.android.material.internal.ViewUtils.hideKeyboard
 import com.google.gson.Gson
@@ -41,6 +40,7 @@ class EditHomeActivity : AppCompatActivity() {
         }
         binding.inputTeamName.setText(infosSeason.teamName)
         binding.inputSeason.setText(infosSeason.yearsSeason)
+        binding.inputMatchsDuration.setText(infosSeason.matchDuration.toString() + " mn")
         binding.inputGroupLetter.setText(infosSeason.groupLetter)
         binding.inputNbTeams.setText(infosSeason.nbTeams.toString())
 
@@ -61,7 +61,6 @@ class EditHomeActivity : AppCompatActivity() {
                 afficheEquipes()
                 // Mise a jour du nombre d'équipe
                 binding.inputNbTeams.setText((editTeamsList.size + 1).toString())
-
 
                 return@setOnEditorActionListener true
             }
@@ -86,10 +85,11 @@ class EditHomeActivity : AppCompatActivity() {
             // Récupération des infos de la saisons puis sauvegarde
             val teamName = binding.inputTeamName.text.toString()
             val yearsSeason = binding.inputSeason.text.toString()
+            val matchDuration = binding.inputMatchsDuration.text.toString().substring(0,2).toInt()
             val groupLetter = binding.inputGroupLetter.text.toString()
             val nbTeams = binding.inputNbTeams.text.toString().toInt()
 
-            infosSeason = InfosSeason(teamName, yearsSeason, groupLetter, nbTeams)
+            infosSeason = InfosSeason(teamName, yearsSeason, matchDuration, groupLetter, nbTeams)
 
             val jsonString2 = Gson().toJson(infosSeason)
             Serializer.serialize(fileNameSeason, jsonString2, this)
@@ -114,6 +114,19 @@ class EditHomeActivity : AppCompatActivity() {
         }
         afficheEquipes()
 
+        // Ne pas laisser le champ durée des matchs vide par erreur
+        binding.inputMatchsDuration.setOnEditorActionListener { v, actionId, event ->
+            var matchDuration = binding.inputMatchsDuration.text.toString()
+
+            if (actionId == EditorInfo.IME_ACTION_DONE){
+                if(matchDuration.isEmpty()) {binding.inputMatchsDuration.setText("10")}
+                hideKeyboard(binding.inputMatchsDuration)
+                return@setOnEditorActionListener true
+            }
+            false
+
+        }
+
         // Vide les champs quand on est dessus
         binding.inputTeamName.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {
@@ -122,6 +135,10 @@ class EditHomeActivity : AppCompatActivity() {
         binding.inputSeason.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {
                 (binding.inputSeason).text.clear()
+            }}
+        binding.inputMatchsDuration.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
+            if (hasFocus) {
+                (binding.inputMatchsDuration).text.clear()
             }}
         binding.inputGroupLetter.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
             if (hasFocus) {

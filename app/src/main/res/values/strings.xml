@@ -33,10 +33,10 @@
     <string name="popup_weak">Max Pied Faible</string>
     <string name="popup_head">Max Tête</string>
     <string name="popup_total">Meilleur Total</string>
-    <string name="nb_matchs_played">Nbre de Matchs joués</string>
-    <string name="popup_playtime">Temps de jeu total</string>
-    <string name="playtime_by_match">Temps de jeu/match</string>
-    <string name="goals_scored">Buts marqués</string>
+    <string name="nb_matchs_played">Nb Matchs joués:</string>
+    <string name="popup_playtime">Tps jeu total:</string>
+    <string name="playtime_by_match">Tps jeu/match:</string>
+    <string name="goals_scored">Buts marqués:</string>
 
     <string name="edit_player_title">Modifier Infos Joueur</string>
     <string name="edit_new_session_title">Nouvelle scéance de jongles</string>
@@ -44,7 +44,7 @@
     <string name="edit_session_weak_label">Pied Faible</string>
     <string name="edit_session_head_label">Tête</string>
     <string name="edit_session_total_label">Total scéance</string>
-    <string name="edit_addPlaytime_label">Ajouter temps de jeu</string>
+    <string name="edit_addPlaytime_label">Ajouter tps de jeu</string>
     <string name="edit_addGoals_label">Buts à ajouter</string>
 
 

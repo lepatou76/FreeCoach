@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlayersActivity"
+    tools:context=".MatchsActivity"
     android:background="@color/blue"
     android:padding="10dp">
 
@@ -13,37 +13,48 @@
         android:id="@+id/matchs_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/players_page_title"
+        android:text=" MATCHS "
         android:textColor="@color/white"
         style="@style/DefaultTitleTextStyleBold"
         android:layout_centerHorizontal="true"
         android:background="@drawable/red_border"
         android:backgroundTint="@color/red" />
 
+    <TextView
+        android:id="@+id/match_Duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/matchs_title"
+        android:text="Durée des matchs: 10 mn"
+        android:textColor="@color/white"
+        style="@style/DefaultTextStyleBold"/>
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/players_Recyclerview"
+        android:id="@+id/matchs_Recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/matchs_title"
-        android:layout_above="@id/add_new_player_button"
+        android:layout_below="@id/match_Duration"
+        android:layout_above="@id/add_new_match_button"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/blue_border"
         android:backgroundTint="@color/white"
-        tools:listitem="@layout/player_item"/>
+        tools:listitem="@layout/match_item"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_new_player_button"
+        android:id="@+id/add_new_match_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/add_player_button"
+        android:src="@drawable/add_button"
         android:backgroundTint="@color/red"
         app:tint="@color/white"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/players_home_button"
+        android:id="@+id/matchs_home_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -53,12 +64,12 @@
         app:tint="@color/white"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/playersMatchsScreenButton"
+        android:id="@+id/matchsPlayerScreenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/matchs_button"
+        android:src="@drawable/players_button"
         app:tint="@color/white"
         android:backgroundTint="@color/red"/>
 

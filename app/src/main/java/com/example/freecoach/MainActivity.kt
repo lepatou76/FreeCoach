@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Mise en page personnalisée pour afficher la liste des équipes
+        teamsList.sort()
         teamsListView = binding.homeListTeams
         val adapter = ArrayAdapter(this@MainActivity, team_item_list, teamsList)
         teamsListView!!.adapter = adapter

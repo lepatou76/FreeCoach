@@ -55,7 +55,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginStart="20dp"
         android:background="@drawable/blue_border"
-        android:hint="Durée en mn"
+        android:hint="@string/edit_home_match_duration"
         android:textAlignment="center"
         android:inputType="number"
         android:imeOptions="actionDone"/>

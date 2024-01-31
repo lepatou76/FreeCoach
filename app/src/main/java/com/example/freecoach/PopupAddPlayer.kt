@@ -12,6 +12,7 @@ import com.example.freecoach.tools.PlayersAdapter
 import com.example.freecoach.tools.PlayersDataBaseHelper
 
 class PopupAddPlayer(adapter: PlayersAdapter): Dialog(adapter.context) {
+
     private lateinit var db: PlayersDataBaseHelper
     private var context: Context = adapter.context
     override fun onCreate(savedInstanceState: Bundle?) {

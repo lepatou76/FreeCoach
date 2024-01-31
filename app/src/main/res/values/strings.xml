@@ -12,6 +12,7 @@
     <string name="edit_home_page">Edition page d\'Accueil</string>
     <string name="input_team_name">Nom de l\'équipe</string>
     <string name="edit_years_season">20--/20--</string>
+    <string name="edit_home_match_duration">Durée en mn</string>
     <string name="edit_nb_players">Nb de joueurs</string>
     <string name="edit_group">-Groupe-</string>
     <string name="edit_nb_teams">Nb d\'équipes</string>
@@ -25,8 +26,8 @@
     <string name="playTime_item">Temps de jeu:</string>
     <string name="record_juggles_item">Record Jongles:</string>
 
-    <string name="add_player_title">" "Ajout Joueur" "</string>
     <string name="players_page_title">" "JOUEURS" "</string>
+    <string name="add_player_title">" "Ajout Joueur" "</string>
 
     <string name="infos_player_title">INFOS JOUEUR</string>
     <string name="popup_strong">Max Pied Fort</string>
@@ -46,6 +47,8 @@
     <string name="edit_session_total_label">Total scéance</string>
     <string name="edit_addPlaytime_label">Ajouter tps de jeu</string>
     <string name="edit_addGoals_label">Buts à ajouter</string>
+
+    <!-- Match item, Matchs page, Add match page -->
 
 
 </resources>

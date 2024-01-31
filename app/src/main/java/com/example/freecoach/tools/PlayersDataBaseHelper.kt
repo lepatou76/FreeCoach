@@ -102,7 +102,7 @@ class PlayersDataBaseHelper(context: Context): SQLiteOpenHelper
                 Player(id, lastName, firstName, strong, strongImage,
                     weak, weakImage, head, headImage, total, totalImage, nbMatchs, playTime, scored)
             playerList.add(player)
-            }
+        }
         cursor.close()
         db.close()
         return playerList

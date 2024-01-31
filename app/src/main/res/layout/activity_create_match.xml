@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateMatchActivity"
+    android:padding="10dp"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/blue_border">
+
+    <TextView
+        android:id="@+id/create_match_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Créer fiche Match"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        style="@style/DefaultTitleTextStyleBold"
+        android:background="@drawable/red_border"
+        android:backgroundTint="@color/blue"/>
+
+    <LinearLayout
+        android:id="@+id/create_home"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/create_match_title"
+        android:layout_marginTop="20dp">
+
+        <Spinner
+            android:id="@+id/create_spinnerHome"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <EditText
+            android:id="@+id/create_homeGoals"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:hint="0"
+            android:textAlignment="center"
+            style="@style/DefaultSubTitleTextStyleBold"
+            android:background="@drawable/blue_border"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/create_outside"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/create_home"
+        android:layout_marginTop="20dp">
+
+        <Spinner
+            android:id="@+id/create_spinnerOutside"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <EditText
+            android:id="@+id/create_outsideGoals"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:hint="0"
+            android:textAlignment="center"
+            style="@style/DefaultSubTitleTextStyleBold"
+            android:background="@drawable/blue_border"
+            android:inputType="number"
+            android:imeOptions="actionDone"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/create_challenge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/create_outside"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/blue_border">
+
+        <TextView
+            android:id="@+id/create_result_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Résutat Défi: "
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            style="@style/DefaultTextStyleBold"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/create_result_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp">
+
+            <RadioButton
+                android:id="@+id/create_rbWin"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="Gagné" />
+
+            <RadioButton
+                android:id="@+id/create_rbLoose"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Perdu" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/create_reportTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/create_challenge"
+        android:text=" Notes de Match "
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        style="@style/DefaultSubTitleTextStyleBold"
+        android:background="@drawable/blue_border"
+        android:backgroundTint="@color/blue"/>
+
+    <ImageView
+        android:id="@+id/create_finish_note_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/note_done_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/blue_border"
+        android:backgroundTint="@color/blue"
+        android:layout_above="@id/create_reportEditText"
+        app:tint="@color/white" />
+
+    <EditText
+        android:id="@+id/create_reportEditText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/createMatchValidButton"
+        android:layout_below="@id/create_reportTitle"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/blue_border"
+        android:hint="A travailler"
+        android:gravity="top"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"/>
+
+    <Button
+        android:id="@+id/createMatchValidButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/edit_valid_button"
+        android:textSize="24dp"/>
+
+    <ImageView
+        android:id="@+id/createMatchExitButton"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:src="@drawable/close_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/blue_border"
+        android:backgroundTint="@color/blue"
+        app:tint="@color/white"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"/>
+
+
+</RelativeLayout>

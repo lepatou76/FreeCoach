@@ -14,9 +14,7 @@ import com.example.freecoach.R
 
 class PlayersAdapter(private var players: List<Player>, val context: PlayersActivity):
     RecyclerView.Adapter<PlayersAdapter.PlayerViewHolder>() {
-
-    private val db = PlayersDataBaseHelper(context)
-
+    
     class PlayerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val lastNameTextView: TextView = itemView.findViewById(R.id.player_lastname)
         val firstNameTextView: TextView = itemView.findViewById(R.id.player_first_name)

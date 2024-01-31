@@ -94,15 +94,15 @@
                 android:id="@+id/match_item_challenge_label"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="Défi"
-                android:textSize="15dp"
-                android:textAlignment="center"
                 android:layout_marginLeft="30dp"
-                android:layout_toRightOf="@id/match_item_outside_team_goals" />
+                android:layout_toRightOf="@id/match_item_outside_team_goals"
+                android:text="Défi"
+                android:textAlignment="center"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/match_item_challenge_result"
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="résultat"
                 android:textAlignment="center"

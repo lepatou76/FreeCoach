@@ -106,14 +106,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:text="Gagné" />
+                android:text="Gagné"
+                app:buttonTint="@color/blue"/>
+
+            <RadioButton
+                android:id="@+id/create_rbEquality"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="Egalité"
+                app:buttonTint="@color/blue"
+                android:checked="true"/>
 
             <RadioButton
                 android:id="@+id/create_rbLoose"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Perdu" />
+                android:text="Perdu"
+                app:buttonTint="@color/blue"/>
 
         </LinearLayout>
 

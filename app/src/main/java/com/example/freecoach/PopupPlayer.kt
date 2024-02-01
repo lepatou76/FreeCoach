@@ -13,8 +13,7 @@ import com.example.freecoach.R.*
 import com.example.freecoach.tools.PlayersAdapter
 import com.example.freecoach.tools.PlayersDataBaseHelper
 
-class PopupPlayer(
-    adapter: PlayersAdapter,
+class PopupPlayer(adapter: PlayersAdapter,
     private val currentPlayer: Player): Dialog(adapter.context) {
 
     private val db = PlayersDataBaseHelper(adapter.context)
@@ -25,7 +24,7 @@ class PopupPlayer(
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(layout.popup_player_details)
-        getWindow()?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)
+        window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)
 
         findViewById<TextView>(id.popup_lastName).text = currentPlayer.lastName
         findViewById<TextView>(id.popup_firstName).text = currentPlayer.firstName

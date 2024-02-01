@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/red_border"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/popup_match_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INFOS MATCH"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:layout_marginStart="30dp"
+        style="@style/DefaultTitleTextStyleBold"
+        android:background="@drawable/red_border"
+        android:backgroundTint="@color/red"/>
+
+    <ImageView
+        android:id="@+id/popup_match_close_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/close_button"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:id="@+id/popup_match_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Match Résultat"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        style="@style/DefaultTitleTextStyleBold"
+        android:background="@drawable/black_border"
+        android:layout_below="@id/popup_match_title"/>
+
+    <RelativeLayout
+        android:id="@+id/popup_match_score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/popup_match_result"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/red_border"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:id="@+id/popup_match_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/popup_match_homeTeam"
+                style="@style/DefaultSubTitleTextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Equipe Domicile" />
+
+            <TextView
+                android:id="@+id/popup_match_homeGoals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/popup_match_homeTeam"
+                android:layout_marginLeft="20dp"
+                android:text="0"
+                style="@style/DefaultSubTitleTextStyleBold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/popup_match_outside"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/popup_match_home"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/popup_match_outsideTeam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Equipe Domicile"
+                style="@style/DefaultSubTitleTextStyleBold"/>
+
+            <TextView
+                android:id="@+id/popup_match_outsideGoals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/popup_match_homeTeam"
+                android:layout_marginLeft="20dp"
+                android:text="0"
+                style="@style/DefaultSubTitleTextStyleBold"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/popup_match_challenge"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/popup_match_score"
+        android:gravity="center"
+        android:background="@drawable/red_border"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Défi"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+
+        <TextView
+            android:id="@+id/popup_match_challengeResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Résultat"
+            android:layout_marginLeft="10dp"
+            style="@style/DefaultSubTitleTextStyleBold"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/popup_match_notes_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/popup_match_challenge"
+        android:text=" Notes de Match "
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        style="@style/DefaultSubTitleTextStyleBold"
+        android:background="@drawable/red_border"
+        android:backgroundTint="@color/red"/>
+
+    <EditText
+        android:id="@+id/popup_match_report"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/popup_match_notes_title"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/red_border"
+        android:hint="A travailler"
+        android:gravity="top"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"/>
+
+    <ImageView
+        android:id="@+id/popup_delete_player_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/delete_button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"/>
+
+</RelativeLayout>

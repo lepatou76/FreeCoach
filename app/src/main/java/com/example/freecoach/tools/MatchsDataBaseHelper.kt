@@ -29,7 +29,7 @@ class MatchsDataBaseHelper(context: Context): SQLiteOpenHelper
                 "$COLUMN_TEAMOUTSIDE TEXT," +
                 "$COLUMN_GOALSTEAMHOME INT," +
                 "$COLUMN_GOALSTEAMOUTSIDE INT," +
-                "$COLUMN_CHALLENGERESULT BOOLEAN," +
+                "$COLUMN_CHALLENGERESULT STRING," +
                 "$COLUMN_MATCHREPORT TEXT)"
 
         db?.execSQL(createTableQuery)
@@ -69,7 +69,7 @@ class MatchsDataBaseHelper(context: Context): SQLiteOpenHelper
             val teamOutside = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TEAMOUTSIDE))
             val homeGoals = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_GOALSTEAMHOME))
             val outsideGoals = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_GOALSTEAMOUTSIDE))
-            val challengeResult = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_CHALLENGERESULT)) == 1
+            val challengeResult = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CHALLENGERESULT))
             val matchReport = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_MATCHREPORT))
             val match = Match (id, teamHome, teamOutside, homeGoals, outsideGoals, challengeResult , matchReport)
             matchList.add(match)
@@ -77,5 +77,13 @@ class MatchsDataBaseHelper(context: Context): SQLiteOpenHelper
         cursor.close()
         db.close()
         return matchList
+    }
+    // Pour effacer un match de la BDD
+    fun deleteMatch(matchId: Int) {
+        val db = writableDatabase
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(matchId.toString())
+
+        db.delete(TABLE_NAME, whereClause, whereArgs)
     }
 }

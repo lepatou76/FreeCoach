@@ -14,7 +14,7 @@ import com.example.freecoach.R
 
 class PlayersAdapter(private var players: List<Player>, val context: PlayersActivity):
     RecyclerView.Adapter<PlayersAdapter.PlayerViewHolder>() {
-    
+
     class PlayerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val lastNameTextView: TextView = itemView.findViewById(R.id.player_lastname)
         val firstNameTextView: TextView = itemView.findViewById(R.id.player_first_name)
@@ -32,6 +32,7 @@ class PlayersAdapter(private var players: List<Player>, val context: PlayersActi
     override fun getItemCount(): Int = players.size
 
     override fun onBindViewHolder(holder: PlayerViewHolder, position: Int) {
+
         val currentPlayer = players[position]
         holder.lastNameTextView.text = currentPlayer.lastName
         holder.firstNameTextView.text = currentPlayer.firstName

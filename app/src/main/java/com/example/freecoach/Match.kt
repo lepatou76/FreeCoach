@@ -6,6 +6,6 @@ data class Match(
     val teamOutside: String,
     val goalTeamHome: Int,
     val goalTeamOutside: Int,
-    val challengeResult: Boolean,
+    val challengeResult: String = "Egalité",
     val matchReport: String = "Points à travailler"
 )

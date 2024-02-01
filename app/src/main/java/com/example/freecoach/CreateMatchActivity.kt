@@ -55,12 +55,22 @@ class CreateMatchActivity : AppCompatActivity() {
         spinnerHome.adapter = teamsAdapter
         spinnerOutside.adapter = teamsAdapter
 
-        // ne permettre qu'une seule selection de résultat du défi
+        // ne permettre qu'une seule selection de résultat du défi et enregistrer la valeur correspondante
+        var challengeResult = "Egalité"
         binding.createRbWin.setOnClickListener {
             binding.createRbLoose.isChecked = false
+            binding.createRbEquality.isChecked = false
+            challengeResult = "Gagné"
         }
         binding.createRbLoose.setOnClickListener {
             binding.createRbWin.isChecked = false
+            binding.createRbEquality.isChecked = false
+            challengeResult = "Perdu"
+        }
+        binding.createRbEquality.setOnClickListener {
+            binding.createRbWin.isChecked = false
+            binding.createRbLoose.isChecked = false
+            challengeResult = "Egalité"
         }
 
         // pour terminer la saisie des notes de match
@@ -68,14 +78,19 @@ class CreateMatchActivity : AppCompatActivity() {
             hideKeyboard(binding.createReportTitle)
         }
 
-
         // Valider et enregistrer en BDD les infos du matchle
         binding.createMatchValidButton.setOnClickListener {
+            // Eviter erreur si champs buts non remplis
+            if(binding.createHomeGoals.text.isEmpty()) {
+                binding.createHomeGoals.setText("0")
+            }
+            if(binding.createOutsideGoals.text.isEmpty()) {
+                binding.createOutsideGoals.setText("0")
+            }
             val homeTeam = binding.createSpinnerHome.selectedItem.toString()
             val outsideTeam = binding.createSpinnerOutside.selectedItem.toString()
             val homeGoals = binding.createHomeGoals.text.toString().toInt()
             val outsideGoals = binding.createOutsideGoals.text.toString().toInt()
-            val challengeResult = binding.createRbWin.isChecked
             val matchReport = binding.createReportEditText.text.toString()
 
             val match = Match(0, homeTeam, outsideTeam, homeGoals, outsideGoals, challengeResult, matchReport)

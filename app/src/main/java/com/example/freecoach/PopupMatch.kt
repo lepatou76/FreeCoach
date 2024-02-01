@@ -1,15 +1,14 @@
 package com.example.freecoach
 
-import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import com.example.freecoach.tools.MatchsAdapter
 import com.example.freecoach.tools.MatchsDataBaseHelper
@@ -19,13 +18,13 @@ import com.google.gson.reflect.TypeToken
 
 
 class PopupMatch(adapter: MatchsAdapter,
-    val currentMatch: Match): Dialog(adapter.context) {
+    private val currentMatch: Match): Dialog(adapter.context) {
 
     private val db = MatchsDataBaseHelper(adapter.context)
     private var context: Context = adapter.context
-    val fileNameSeason = "infosSeason"
-    var infosSeason = InfosSeason()
-    val seasontype = object : TypeToken<InfosSeason>() {}.type
+    private val fileNameSeason = "infosSeason"
+    private var infosSeason = InfosSeason()
+    private val seasontype = object : TypeToken<InfosSeason>() {}.type
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,11 +50,13 @@ class PopupMatch(adapter: MatchsAdapter,
                 matchResult.text = " Match Gagné "
                 matchResult.setBackgroundResource(R.drawable.green_border)
                 matchResult.setTextColor(Color.parseColor("#30A330"))
+                findViewById<RelativeLayout>(R.id.popup_match_score).setBackgroundResource(R.drawable.green_border)
             }
             if (currentMatch.goalTeamHome < currentMatch.goalTeamOutside) {
                 matchResult.text = " Match Perdu "
                 matchResult.setBackgroundResource(R.drawable.red_border)
                 matchResult.setTextColor(Color.parseColor("#F35F5F"))
+                findViewById<RelativeLayout>(R.id.popup_match_score).setBackgroundResource(R.drawable.red_border)
             }
         }
         if(currentMatch.teamHome != infosSeason.teamName) {
@@ -63,11 +64,13 @@ class PopupMatch(adapter: MatchsAdapter,
                 matchResult.text = " Match Perdu "
                 matchResult.setBackgroundResource(R.drawable.red_border)
                 matchResult.setTextColor(Color.parseColor("#F35F5F"))
+                findViewById<RelativeLayout>(R.id.popup_match_score).setBackgroundResource(R.drawable.red_border)
             }
             if (currentMatch.goalTeamHome < currentMatch.goalTeamOutside) {
                 matchResult.text = " Match Gagné "
                 matchResult.setBackgroundResource(R.drawable.green_border)
                 matchResult.setTextColor(Color.parseColor("#30A330"))
+                findViewById<RelativeLayout>(R.id.popup_match_score).setBackgroundResource(R.drawable.green_border)
             }
         }
 
@@ -78,9 +81,11 @@ class PopupMatch(adapter: MatchsAdapter,
         findViewById<TextView>(R.id.popup_match_challengeResult).text = currentMatch.challengeResult
         // adapter la couleur du texte suivant le resultat du challenge
         if(currentMatch.challengeResult == "Gagné") {
+            findViewById<TextView>(R.id.popup_match_challengeResult).setBackgroundResource(R.drawable.green_border)
             findViewById<TextView>(R.id.popup_match_challengeResult).setTextColor(Color.parseColor("#30A330"))
         }
         if(currentMatch.challengeResult == "Perdu") {
+            findViewById<TextView>(R.id.popup_match_challengeResult).setBackgroundResource(R.drawable.red_border)
             findViewById<TextView>(R.id.popup_match_challengeResult).setTextColor(Color.parseColor("#F35F5F"))
         }
         findViewById<TextView>(R.id.popup_match_report).text = currentMatch.matchReport

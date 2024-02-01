@@ -17,12 +17,12 @@ class CreateMatchActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCreateMatchBinding
     private lateinit var db: MatchsDataBaseHelper
-    val fileNameTeams = "groupTeamList"
-    val fileNameSeason = "infosSeason"
-    var teamsList = ArrayList<String>()
-    var infosSeason = InfosSeason()
-    val arraytype = object : TypeToken<ArrayList<String>>() {}.type
-    val seasontype = object : TypeToken<InfosSeason>() {}.type
+    private val fileNameTeams = "groupTeamList"
+    private val fileNameSeason = "infosSeason"
+    private var teamsList = ArrayList<String>()
+    private var infosSeason = InfosSeason()
+    private val arraytype = object : TypeToken<ArrayList<String>>() {}.type
+    private val seasontype = object : TypeToken<InfosSeason>() {}.type
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -22,9 +22,9 @@ class EditPlayerActivity() : AppCompatActivity() {
     private lateinit var binding: ActivityEditPlayerBinding
     private lateinit var db: PlayersDataBaseHelper
     private var playerID: Int = -1
-    val fileNameSeason = "infosSeason"
-    val seasontype = object : TypeToken<InfosSeason>() {}.type
-    var infosSeason = InfosSeason()
+    private val fileNameSeason = "infosSeason"
+    private val seasontype = object : TypeToken<InfosSeason>() {}.type
+    private var infosSeason = InfosSeason()
 
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -5,7 +5,6 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.freecoach.Match
-import com.example.freecoach.Player
 
 class MatchsDataBaseHelper(context: Context): SQLiteOpenHelper
     (context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -29,7 +28,7 @@ class MatchsDataBaseHelper(context: Context): SQLiteOpenHelper
                 "$COLUMN_TEAMOUTSIDE TEXT," +
                 "$COLUMN_GOALSTEAMHOME INT," +
                 "$COLUMN_GOALSTEAMOUTSIDE INT," +
-                "$COLUMN_CHALLENGERESULT STRING," +
+                "$COLUMN_CHALLENGERESULT TEXT," +
                 "$COLUMN_MATCHREPORT TEXT)"
 
         db?.execSQL(createTableQuery)

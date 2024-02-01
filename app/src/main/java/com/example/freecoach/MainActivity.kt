@@ -17,13 +17,13 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var db: PlayersDataBaseHelper
-    val fileNameTeams = "groupTeamList"
-    val fileNameSeason = "infosSeason"
-    var teamsListView: ListView? = null
-    var teamsList = ArrayList<String>()
-    var infosSeason = InfosSeason()
-    val arraytype = object : TypeToken<ArrayList<String>>() {}.type
-    val seasontype = object : TypeToken<InfosSeason>() {}.type
+    private val fileNameTeams = "groupTeamList"
+    private val fileNameSeason = "infosSeason"
+    private var teamsListView: ListView? = null
+    private var teamsList = ArrayList<String>()
+    private var infosSeason = InfosSeason()
+    private val arraytype = object : TypeToken<ArrayList<String>>() {}.type
+    private val seasontype = object : TypeToken<InfosSeason>() {}.type
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         db = PlayersDataBaseHelper(this)
-        var nbPlayers = db.getAllPlayers("nom, prénom ASC").size
+        val nbPlayers = db.getAllPlayers("nom, prénom ASC").size
         binding.homeNbPlayers.text = nbPlayers.toString()
 
         // Récupération et affichage des infos de la saison sauvegardées si non nulles
@@ -39,10 +39,10 @@ class MainActivity : AppCompatActivity() {
             val seasonBack = Serializer.deSerialize(fileNameSeason, this).toString()
             infosSeason = Gson().fromJson(seasonBack, seasontype)
         }
-        binding.HomeTeamName.setText(" " + infosSeason.teamName + " ")
-        binding.homeYearsSeason.setText(infosSeason.yearsSeason)
-        binding.homeGroupLetter.setText(infosSeason.groupLetter)
-        binding.homeNbTeams.setText(infosSeason.nbTeams.toString())
+        binding.HomeTeamName.text = " " + infosSeason.teamName + " "
+        binding.homeYearsSeason.text = infosSeason.yearsSeason
+        binding.homeGroupLetter.text = infosSeason.groupLetter
+        binding.homeNbTeams.text = infosSeason.nbTeams.toString()
 
         // Affichage de la liste des équipes sauvegardées si elle n'est pas nulle
         if(Serializer.deSerialize(fileNameTeams, this) != null) {

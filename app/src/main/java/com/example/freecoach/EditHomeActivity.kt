@@ -18,13 +18,13 @@ import com.google.gson.reflect.TypeToken
 class EditHomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditHomeBinding
-    val fileNameTeams = "groupTeamList"
-    val fileNameSeason = "infosSeason"
-    var teamsListView: ListView? = null
-    var infosSeason = InfosSeason()
-    var editTeamsList =  ArrayList<String>()
-    val arraytype = object : TypeToken<ArrayList<String>>() {}.type
-    val seasontype = object : TypeToken<InfosSeason>() {}.type
+    private val fileNameTeams = "groupTeamList"
+    private val fileNameSeason = "infosSeason"
+    private var teamsListView: ListView? = null
+    private var infosSeason = InfosSeason()
+    private var editTeamsList =  ArrayList<String>()
+    private val arraytype = object : TypeToken<ArrayList<String>>() {}.type
+    private val seasontype = object : TypeToken<InfosSeason>() {}.type
 
 
     @SuppressLint("RestrictedApi")
@@ -42,7 +42,7 @@ class EditHomeActivity : AppCompatActivity() {
         binding.inputSeason.setText(infosSeason.yearsSeason)
         binding.inputMatchsDuration.setText(infosSeason.matchDuration.toString() + " mn")
         binding.inputGroupLetter.setText(infosSeason.groupLetter)
-        binding.inputNbTeams.setText(infosSeason.nbTeams.toString())
+        binding.inputNbTeams.text = infosSeason.nbTeams.toString()
 
         // Affichage de la liste des équipes sauvegardées si elle n'est pas nulle
         if(Serializer.deSerialize(fileNameTeams, this) != null) {
@@ -54,13 +54,13 @@ class EditHomeActivity : AppCompatActivity() {
         binding.inputGroupTeams.setOnEditorActionListener { textView, actionID, KeyEvent ->
             if (binding.inputGroupTeams.text.isNotEmpty() && actionID == EditorInfo.IME_ACTION_DONE) {
 
-                editTeamsList?.add((binding.inputGroupTeams.text.toString()))
+                editTeamsList.add((binding.inputGroupTeams.text.toString()))
                 binding.inputGroupTeams.text.clear()
                 hideKeyboard(binding.inputGroupTeams)
                 // rafraichisement de la liste des équipes
                 afficheEquipes()
                 // Mise a jour du nombre d'équipe
-                binding.inputNbTeams.setText((editTeamsList.size + 1).toString())
+                binding.inputNbTeams.text = (editTeamsList.size + 1).toString()
 
                 return@setOnEditorActionListener true
             }
@@ -71,7 +71,7 @@ class EditHomeActivity : AppCompatActivity() {
         binding.editListTeams.setOnItemClickListener { parent, view, position, id ->
             editTeamsList.removeAt(position)
             // Mise a jour du nombre d'équipe
-            binding.inputNbTeams.setText((editTeamsList.size + 1).toString())
+            binding.inputNbTeams.text = (editTeamsList.size + 1).toString()
             afficheEquipes()
         }
 
@@ -116,7 +116,7 @@ class EditHomeActivity : AppCompatActivity() {
 
         // Ne pas laisser le champ durée des matchs vide par erreur
         binding.inputMatchsDuration.setOnEditorActionListener { v, actionId, event ->
-            var matchDuration = binding.inputMatchsDuration.text.toString()
+            val matchDuration = binding.inputMatchsDuration.text.toString()
 
             if (actionId == EditorInfo.IME_ACTION_DONE){
                 if(matchDuration.isEmpty()) {binding.inputMatchsDuration.setText("10")}

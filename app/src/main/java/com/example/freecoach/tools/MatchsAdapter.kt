@@ -11,7 +11,6 @@ import com.example.freecoach.InfosSeason
 import com.example.freecoach.Match
 import com.example.freecoach.MatchsActivity
 import com.example.freecoach.PopupMatch
-import com.example.freecoach.PopupPlayer
 import com.example.freecoach.R
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -19,9 +18,9 @@ import com.google.gson.reflect.TypeToken
 class MatchsAdapter(private var matchs: List<Match>, val context: MatchsActivity ):
     RecyclerView.Adapter<MatchsAdapter.MatchsViewHolder>(){
 
-    val fileNameSeason = "infosSeason"
-    val seasontype = object : TypeToken<InfosSeason>() {}.type
-    var infosSeason = InfosSeason()
+    private val fileNameSeason = "infosSeason"
+    private val seasontype = object : TypeToken<InfosSeason>() {}.type
+    private var infosSeason = InfosSeason()
 
     class MatchsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val homeTeamName: TextView = itemView.findViewById(R.id.match_item_home_team_name)

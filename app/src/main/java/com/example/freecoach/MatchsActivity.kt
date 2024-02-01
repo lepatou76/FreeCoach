@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.freecoach.databinding.ActivityMatchsBinding
 import com.example.freecoach.tools.MatchsAdapter
 import com.example.freecoach.tools.MatchsDataBaseHelper
-import com.example.freecoach.tools.PlayersDataBaseHelper
 import com.example.freecoach.tools.Serializer
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -17,9 +16,9 @@ class MatchsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMatchsBinding
     private lateinit var db: MatchsDataBaseHelper
     private lateinit var matchAdapter: MatchsAdapter
-    val fileNameSeason = "infosSeason"
-    val seasontype = object : TypeToken<InfosSeason>() {}.type
-    var infosSeason = InfosSeason()
+    private val fileNameSeason = "infosSeason"
+    private val seasontype = object : TypeToken<InfosSeason>() {}.type
+    private var infosSeason = InfosSeason()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMatchsBinding.inflate(layoutInflater)
@@ -32,7 +31,7 @@ class MatchsActivity : AppCompatActivity() {
             val seasonBack = Serializer.deSerialize(fileNameSeason, this).toString()
             infosSeason = Gson().fromJson(seasonBack, seasontype)
         }
-        binding.matchDuration.setText(" Durée des matchs: " + infosSeason.matchDuration + " mn")
+        binding.matchDuration.text = " Durée des matchs: " + infosSeason.matchDuration + " mn"
 
         // récupération et affichage du playersRecyclerview
         matchAdapter = MatchsAdapter(db.getAllMatchs(), this)

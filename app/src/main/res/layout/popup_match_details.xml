@@ -9,7 +9,7 @@
         android:id="@+id/popup_match_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="INFOS MATCH"
+        android:text="@string/infos_match"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:layout_marginStart="30dp"
@@ -28,7 +28,7 @@
         android:id="@+id/popup_match_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Match Résultat"
+        android:text="@string/match_result"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         style="@style/DefaultTitleTextStyleBold"
@@ -56,7 +56,7 @@
                 style="@style/DefaultSubTitleTextStyleBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Equipe Domicile" />
+                android:text="@string/match_homeTeam" />
 
             <TextView
                 android:id="@+id/popup_match_homeGoals"
@@ -82,7 +82,7 @@
                 android:id="@+id/popup_match_outsideTeam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Equipe Domicile"
+                android:text="@string/match_outsideTeam"
                 style="@style/DefaultSubTitleTextStyleBold"/>
 
             <TextView

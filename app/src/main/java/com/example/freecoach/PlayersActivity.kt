@@ -21,7 +21,7 @@ class PlayersActivity: AppCompatActivity() {
         db = PlayersDataBaseHelper(this)
 
         // récupération et affichage du playersRecyclerview
-        playerAdapter = PlayersAdapter(db.getAllPlayers(),this)
+        playerAdapter = PlayersAdapter(db.getAllPlayers("nom, prénom ASC"),this)
 
         binding.playersRecyclerview.layoutManager = LinearLayoutManager(this)
         binding.playersRecyclerview.adapter = playerAdapter
@@ -38,12 +38,32 @@ class PlayersActivity: AppCompatActivity() {
         }
         // Ouverture du popup d'ajout de joueur
         binding.addNewPlayerButton.setOnClickListener {
-            PopupAddPlayer(adapter = PlayersAdapter(db.getAllPlayers(),this)).show()
+            PopupAddPlayer(adapter = PlayersAdapter(db.getAllPlayers("nom, prénom ASC"),this)).show()
         }
+        // Tri des joueurs selon la selection du spinner
+        binding.validFiedToSortButton.setOnClickListener {
+            val fieldSpinner = binding.playersSpinner.selectedItem.toString()
+            var fieldToBDD = "nom ASC"
+            if(fieldSpinner == "+ de Jongles") {
+                fieldToBDD = "totalJongles DESC"
+            }
+            if(fieldSpinner == "- de Jongles") {
+                fieldToBDD = "totalJongles ASC"
+            }
+            if(fieldSpinner == "+ de Tps de jeu") {
+                fieldToBDD = "totalTempsJeu DESC"
+            }
+            if(fieldSpinner == "- de Tps de jeu") {
+                fieldToBDD = "totalTempsJeu ASC"
+            }
+            playerAdapter.refreshData(db.getAllPlayers(fieldToBDD))
+        }
+
+
     }
     override fun onResume() {
         super.onResume()
-        playerAdapter.refreshData(db.getAllPlayers())
+        playerAdapter.refreshData(db.getAllPlayers("nom, prénom ASC"))
     }
 
 }

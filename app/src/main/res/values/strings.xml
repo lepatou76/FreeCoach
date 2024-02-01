@@ -27,6 +27,7 @@
     <string name="record_juggles_item">Record Jongles:</string>
 
     <string name="players_page_title">" "JOUEURS" "</string>
+    <string name="sort_by">Trier par</string>
     <string name="add_player_title">" "Ajout Joueur" "</string>
 
     <string name="infos_player_title">INFOS JOUEUR</string>
@@ -49,6 +50,33 @@
     <string name="edit_addGoals_label">Buts à ajouter</string>
 
     <!-- Match item, Matchs page, Add match page -->
+    <string name="home_team">EQUIPE DOM</string>
+    <string name="outside_team">EQUIPE EXT</string>
+    <string name="score">score</string>
+    <string name="challenge">Défi</string>
+    <string name="result">résultat</string>
 
+    <string name="infos_match">INFOS MATCH</string>
+    <string name="match_result">Match Résultat</string>
+    <string name="match_homeTeam">Equipe Domicile</string>
+    <string name="match_outsideTeam">Equipe Visiteuse</string>
+
+    <string name="create_match_title">Créer fiche Match</string>
+    <string name="create_match_challengeResult">Résutat Défi:</string>
+    <string name="create_match_win">Gagné</string>
+    <string name="create_match_equality">Egalité</string>
+    <string name="create_match_lose">Perdu</string>
+    <string name="create_match_report_title">Notes de Match</string>
+
+
+    <!--liste pour le spinner de tri-->
+    <string-array name="players_spinner_input">
+        <item>NOM</item>
+        <item>- de Tps de jeu</item>
+        <item>+ de Tps de jeu</item>
+        <item>- de Jongles</item>
+        <item>+ de Jongles</item>
+
+    </string-array>
 
 </resources>

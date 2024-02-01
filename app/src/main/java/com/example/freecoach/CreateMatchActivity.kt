@@ -42,8 +42,9 @@ class CreateMatchActivity : AppCompatActivity() {
             val listBack = Serializer.deSerialize(fileNameTeams, this).toString()
             teamsList = Gson().fromJson(listBack, arraytype)
         }
+        // trier la liste alphabétiquement
         teamsList.sort()
-        // Ajout de l'équipe enregistrée dans la liste des équipes
+        // Ajout de l'équipe enregistrée dans la liste des équipes pour qu'elle apparaisse en premier
         teamsList.add(0,infosSeason.teamName)
 
 

@@ -27,7 +27,7 @@
                 android:id="@+id/match_item_home_team_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EQUIPE DOM"
+                android:text="@string/home_team"
                 style="@style/DefaultTextStyleBold"
                 android:textColor="@color/black"/>
 
@@ -45,7 +45,7 @@
                 android:id="@+id/match_item_outside_team_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EQUIPE EXT"
+                android:text="@string/outside_team"
                 style="@style/DefaultTextStyleBold"
                 android:textColor="@color/black"
                 android:layout_toRightOf="@id/match_item_bar1"/>
@@ -62,7 +62,7 @@
                 android:id="@+id/match_item_score_label"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="score"
+                android:text="@string/score"
                 android:textSize="15dp"
                 android:textAlignment="center"/>
 
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_toRightOf="@id/match_item_outside_team_goals"
-                android:text="Défi"
+                android:text="@string/challenge"
                 android:textAlignment="center"
                 android:textSize="15dp" />
 
@@ -105,7 +105,7 @@
                 android:id="@+id/match_item_challenge_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="résultat"
+                android:text="@string/result"
                 android:textAlignment="center"
                 style="@style/DefaultTextStyleBold"
                 android:layout_toRightOf="@id/match_item_challenge_label" />

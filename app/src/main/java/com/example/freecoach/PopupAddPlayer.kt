@@ -45,9 +45,9 @@ class PopupAddPlayer(adapter: PlayersAdapter): Dialog(adapter.context) {
         }
     }
 
+    // Pour juste fermer la fenêtre
     private fun setupCloseButton() {
         findViewById<ImageView>(R.id.popup_addPlayer_closeButton).setOnClickListener {
-            // fermer la fenêtre
             dismiss()
         }
     }

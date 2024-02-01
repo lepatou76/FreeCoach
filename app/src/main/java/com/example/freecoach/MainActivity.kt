@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         db = PlayersDataBaseHelper(this)
-        var nbPlayers = db.getAllPlayers().size
+        var nbPlayers = db.getAllPlayers("nom, prénom ASC").size
         binding.homeNbPlayers.text = nbPlayers.toString()
 
         // Récupération et affichage des infos de la saison sauvegardées si non nulles

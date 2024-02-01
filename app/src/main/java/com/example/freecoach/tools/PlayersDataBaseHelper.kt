@@ -77,11 +77,11 @@ class PlayersDataBaseHelper(context: Context): SQLiteOpenHelper
     /** fonction pour récupérer les joueurs
      * @return liste des joueurs
      */
-    fun getAllPlayers(): List<Player> {
+    fun getAllPlayers(field:String): List<Player> {
         val playerList = mutableListOf<Player>()
         val db = readableDatabase
-        val champ = "$COLUMN_LASTNAME ASC"
-        val query = "SELECT * FROM $TABLE_NAME ORDER BY $champ"
+        // val field = "nom ASC"
+        val query = "SELECT * FROM $TABLE_NAME ORDER BY $field"
         val cursor = db.rawQuery(query, null)
 
         while (cursor.moveToNext()) {

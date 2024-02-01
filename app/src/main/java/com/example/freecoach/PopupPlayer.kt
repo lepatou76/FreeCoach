@@ -40,6 +40,7 @@ class PopupPlayer(adapter: PlayersAdapter,
         findViewById<TextView>(id.popup_playtime).text = currentPlayer.playtime.toString()
         findViewById<TextView>(id.popup_nbGoals).text = currentPlayer.scored.toString()
 
+        // si le joueur a joué au moins 1 match, calcul et affichage de son temps de jeu par match
         if(currentPlayer.nbMatchs.toString().toInt() != 0) {
             findViewById<TextView>(id.popup_ratio).text =
                 (currentPlayer.playtime.toString().toInt())

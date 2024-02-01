@@ -13,7 +13,7 @@
         android:id="@+id/create_match_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Créer fiche Match"
+        android:text="@string/create_match_title"
         android:textAlignment="center"
         android:textColor="@color/white"
         style="@style/DefaultTitleTextStyleBold"
@@ -88,7 +88,7 @@
             android:id="@+id/create_result_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Résutat Défi: "
+            android:text="@string/create_match_challengeResult"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             style="@style/DefaultTextStyleBold"/>
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:text="Gagné"
+                android:text="@string/create_match_win"
                 app:buttonTint="@color/blue"/>
 
             <RadioButton
@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:text="Egalité"
+                android:text="@string/create_match_equality"
                 app:buttonTint="@color/blue"
                 android:checked="true"/>
 
@@ -124,7 +124,7 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Perdu"
+                android:text="@string/create_match_lose"
                 app:buttonTint="@color/blue"/>
 
         </LinearLayout>
@@ -136,7 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/create_challenge"
-        android:text=" Notes de Match "
+        android:text="@string/create_match_report_title"
         android:textColor="@color/white"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
@@ -148,7 +148,7 @@
         android:id="@+id/create_finish_note_button"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/note_done_button"
+        android:src="@drawable/done_button"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="20dp"
         android:background="@drawable/blue_border"

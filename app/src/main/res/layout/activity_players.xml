@@ -10,21 +10,54 @@
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/matchs_title"
+        android:id="@+id/players_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/players_page_title"
         android:textColor="@color/white"
         style="@style/DefaultTitleTextStyleBold"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/red_border"
         android:backgroundTint="@color/red" />
+
+    <TextView
+        android:id="@+id/players_sort_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/players_title"
+        android:layout_marginLeft="10dp"
+        android:text="@string/sort_by"
+        style="@style/DefaultTextStyleBold"
+        android:textColor="@color/white"/>
+
+    <Spinner
+        android:id="@+id/players_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:entries="@array/players_spinner_input"
+        android:layout_toRightOf="@id/players_title"
+        android:layout_below="@id/players_sort_label"
+        android:layout_marginTop="10dp"
+        android:theme="@style/Players_Spinner"/>
+
+    <ImageView
+        android:id="@+id/valid_fiedToSort_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/red_border"
+        android:backgroundTint="@color/red"
+        android:src="@drawable/done_button"
+        app:tint="@color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/players_Recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/matchs_title"
+        android:layout_below="@id/players_title"
         android:layout_above="@id/add_new_player_button"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="20dp"

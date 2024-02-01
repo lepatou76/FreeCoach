@@ -2,13 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- href="https://www.flaticon.com/fr/icones-gratuites/casque-de-football-americain"
+    title="casque de football américain icônes">Casque de football américain icônes créées par Freepik - Flaticon -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/football_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/football_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FreeCoach"
         tools:targetApi="31">

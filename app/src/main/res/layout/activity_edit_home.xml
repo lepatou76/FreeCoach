@@ -101,6 +101,7 @@
         android:hint="@string/input_team_group"
         android:imeOptions="actionDone"
         android:inputType="textCapCharacters"
+        android:maxLength="20"
         android:textAlignment="center" />
 
     <ListView

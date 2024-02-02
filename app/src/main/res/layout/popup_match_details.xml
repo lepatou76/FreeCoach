@@ -103,23 +103,23 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/popup_match_score"
-        android:gravity="center"
+        android:layout_marginTop="12dp"
         android:background="@drawable/black_border"
-        android:layout_marginTop="10dp">
+        android:gravity="center">
 
         <TextView
+            style="@style/DefaultSubTitleTextStyleBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Défi"
-            style="@style/DefaultSubTitleTextStyleBold"/>
+            android:text="Défi" />
 
         <TextView
             android:id="@+id/popup_match_challengeResult"
+            style="@style/DefaultSubTitleTextStyleBold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Résultat"
             android:layout_marginLeft="10dp"
-            style="@style/DefaultSubTitleTextStyleBold"/>
+            android:text="Résultat" />
 
     </LinearLayout>
 

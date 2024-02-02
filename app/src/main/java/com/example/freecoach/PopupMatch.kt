@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.example.freecoach.tools.MatchsAdapter
@@ -81,11 +82,11 @@ class PopupMatch(adapter: MatchsAdapter,
         findViewById<TextView>(R.id.popup_match_challengeResult).text = currentMatch.challengeResult
         // adapter la couleur du texte suivant le resultat du challenge
         if(currentMatch.challengeResult == "Gagné") {
-            findViewById<TextView>(R.id.popup_match_challengeResult).setBackgroundResource(R.drawable.green_border)
+            findViewById<LinearLayout>(R.id.popup_match_challenge).setBackgroundResource(R.drawable.green_border)
             findViewById<TextView>(R.id.popup_match_challengeResult).setTextColor(Color.parseColor("#30A330"))
         }
         if(currentMatch.challengeResult == "Perdu") {
-            findViewById<TextView>(R.id.popup_match_challengeResult).setBackgroundResource(R.drawable.red_border)
+            findViewById<LinearLayout>(R.id.popup_match_challenge).setBackgroundResource(R.drawable.red_border)
             findViewById<TextView>(R.id.popup_match_challengeResult).setTextColor(Color.parseColor("#F35F5F"))
         }
         findViewById<TextView>(R.id.popup_match_report).text = currentMatch.matchReport

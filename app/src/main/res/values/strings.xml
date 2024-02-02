@@ -41,7 +41,7 @@
     <string name="goals_scored">Buts marqués:</string>
 
     <string name="edit_player_title">Modifier Infos Joueur</string>
-    <string name="edit_new_session_title">Nouvelle scéance de jongles</string>
+    <string name="edit_new_session_title">Nouvelle séance de jongles</string>
     <string name="edit_session_strong_label">Pied Fort</string>
     <string name="edit_session_weak_label">Pied Faible</string>
     <string name="edit_session_head_label">Tête</string>
